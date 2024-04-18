@@ -3,7 +3,7 @@ import urllib.request
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-plt.style.use('seaborn-white')
+# plt.style.use('seaborn-white')
 
 import warnings
 warnings.filterwarnings(action='ignore')
