@@ -30,3 +30,9 @@ tfv.fit(train_set)
 tfv_train_set = tfv.transform(train_set)
 print(tfv_train_set)
 
+from sklearn.linear_model import LogisticRegression #이진분류 알고리즘
+from sklearn.model_selection import GridSearchCV #하이퍼 파라미터 최적화
+
+clf = LogisticRegression(random_state=0)
+params = {'C' : [15, 18, 19, 20, 22]}
+grid_cv = GridSearchCV(clf, param_grid=params, cv=3, scoring='accuracy',  verbose=1)
