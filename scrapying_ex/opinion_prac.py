@@ -22,3 +22,11 @@ print(review)
 from sklearn.model_selection import train_test_split
 train_set, test_set = train_test_split(review, test_size=0.2, random_state=0)
 print(len(train_set), len(test_set))
+
+#토큰화
+from sklearn.feature_extraction.text import TfidfVectorizer
+tfv = TfidfVectorizer(tokenizer=okt.morphs, ngram_range=(1, 2), min_df=3, max_df= 0.9)
+tfv.fit(train_set)
+tfv_train_set = tfv.transform(train_set)
+print(tfv_train_set)
+
